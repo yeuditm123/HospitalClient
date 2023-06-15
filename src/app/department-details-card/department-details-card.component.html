@@ -1,0 +1,105 @@
+<mat-card class="dep-card">
+  <mat-card-header>
+    <mat-card-title class="div-title">
+      <p>{{departmentObj.FullName}}</p>
+    </mat-card-title>
+    <mat-card-subtitle>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="div-wrapper-img">
+      <div class="header-content-wrapper">
+        <span>
+          <b>זמני בקור</b>
+          <p>{{departmentObj.VisitTime}}</p>
+        </span>
+      </div>
+      <div class="department-vising-hours">
+        <img src="../../assets/images/baseline_pending_actions_white_18dp.png">
+      </div>
+      <div class="header-content-wrapper">
+        <span><b>מודיעין</b>
+          <p>{{departmentObj.Tel}}</p>
+        </span>
+      </div>
+      <div class="department-phones">
+        <img src="../../assets/images/round_call_white_18dp.png">
+      </div>
+      <div class="header-content-wrapper">
+        <span><b>מנהל מחלקה</b>
+          <p>{{departmentObj.DepartmentManagerName}}</p>
+        </span>
+      </div>
+      <div class="department-manager">
+        <img src="../../assets/images/round_perm_identity_white_18dp.png">
+      </div>
+    </div>
+    <div class="div-rating-wrapper">
+      <div class="rating12">
+        <p class="rating_text">
+          <app-star-rating [rating]="departmentObj.Rating1GeneralSatisfactionAvg" [starCount]="starCount"
+            [color]="starColor" [isDisabled]="true"
+            (ratingUpdated)="departmentObj.Rating1GeneralSatisfactionAvg=$event;"></app-star-rating>
+          <span>שביעות רצון כללית</span>
+        </p>
+        <p class="rating_text">
+          <app-star-rating [rating]="departmentObj.Rating2ListenAndRelateAvg" [starCount]="starCount"
+            [color]="starColor" (ratingUpdated)="departmentObj.Rating2ListenAndRelateAvg=$event;" [isDisabled]="true">
+          </app-star-rating><span>יחס וכבוד
+            למטופל</span>
+        </p>
+      </div>
+      <div class="rating456">
+        <p class="rating_text">
+          <app-star-rating [rating]="departmentObj.Rating3GettingHelpEasilyAvg" [starCount]="starCount"
+            [color]="starColor" (ratingUpdated)="departmentObj.Rating3GettingHelpEasilyAvg=$event;" [isDisabled]="true">
+          </app-star-rating>
+          <span>מתן מידע ובהירות</span>
+        </p>
+        <p class="rating_text">
+          <app-star-rating [rating]="departmentObj.Rating4SharingInformationAvg" [starCount]="starCount"
+            [color]="starColor" (ratingUpdated)="departmentObj.Rating4SharingInformationAvg=$event;"
+            [isDisabled]="true"></app-star-rating>
+          <span>העצמת המטופל</span>
+        </p>
+        <p class="rating_text">
+          <app-star-rating [rating]="departmentObj.Rating5AnEfficientProcessAvg" [starCount]="starCount"
+            [color]="starColor" (ratingUpdated)="departmentObj.Rating5AnEfficientProcessAvg=$event;"
+            [isDisabled]="true"></app-star-rating>
+          <span> יעילות</span>
+        </p>
+      </div>
+      <div class="rating67">
+        <p class="rating_text">
+          <app-star-rating [rating]="departmentObj.Rating6ConditionsOfHospitalizationAvg" [starCount]="starCount"
+            [color]="starColor" (ratingUpdated)="departmentObj.Rating6ConditionsOfHospitalizationAvg=$event;"
+            [isDisabled]="true">
+          </app-star-rating><span>תנאי אשפוז</span>
+        </p>
+        <p class="rating_text">
+          <app-star-rating [rating]="departmentObj.Rating7PreventionOfMedicalErrorsAvg" [starCount]="starCount"
+            [color]="starColor" (ratingUpdated)="departmentObj.Rating7PreventionOfMedicalErrorsAvg=$event;"
+            [isDisabled]="true">
+          </app-star-rating> <span>בטיחות המטופל</span>
+        </p>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-card class="mat-card-opinion" *ngFor="let opinion of opinionArr">
+      <mat-icon class="icon-forum">forum</mat-icon>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="mat-card">{{opinion.Departments.FullName}}</mat-card-title>
+      <mat-card-subtitle id="mat-card">המשתמש {{opinion.Users.UserName}} כתב/ה את חוות דעת</mat-card-subtitle>
+      <mat-card-content>
+        <strong>{{opinion.Title}}</strong>
+        <p *ngIf="openId != null && openId==opinion.OpinionId" class="comment_more_ratings">{{opinion.Summary}}</p>
+        <div class="div-open-wrapping"><a href="javascript:void(0)" (click)="openFunc(opinion.OpinionId)"><span>
+            </span>{{text(opinion.OpinionId)}}</a></div>
+      </mat-card-content>
+    </mat-card>
+    <mat-paginator *ngIf="opinionArr && opinionArr.length >0" [length]="length" [pageSize]="pageSize"
+      (page)="pageEvent = getServerData($event)">
+    </mat-paginator>
+  </mat-card-footer>
+</mat-card>

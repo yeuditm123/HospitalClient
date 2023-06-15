@@ -1,0 +1,56 @@
+<div class="big-round">
+  <div class="small-round" (click)="isfilter()">
+    <p class="filter-txt">מיין לפי</p>
+    <mat-icon class="icon-filter">keyboard_backspace</mat-icon>
+  </div>
+</div>
+<div class="div-filter" *ngIf="isFilter">
+  <mat-radio-group aria-label="Select an option" [(ngModel)]="radioSelected">
+    <mat-radio-button value="sortLetter">'מיין לפי א'ב</mat-radio-button>
+    <mat-radio-button value="sortAvg">מיין לפי ממוצע </mat-radio-button>
+  </mat-radio-group>
+  <button mat-flat-button class="btn-filter" (click)="filteringOk()">מיין</button>
+</div>
+<div class="search">
+  <input #search autocorrect="on" autocapitalize="off" spellcheck="off" type="text" id="inputSearch"
+    placeholder="..חפש כתובת" (input)="valueChanged($event)">
+  <mat-icon class="icon-search">search</mat-icon>
+</div>
+<div class="card col-3" *ngFor="let item of HospitalsArr | paginate: { itemsPerPage: 4, currentPage: p };">
+  <div class="div-header-wrapper">
+    <p><strong>{{item.HospitalName}} </strong>
+      <mat-icon>location_city</mat-icon>
+    </p>
+    <p>{{item.HospitalAddress}} <mat-icon>location_on</mat-icon>
+    </p>
+    <p>{{item.Tel}} <mat-icon>call</mat-icon>
+    </p>
+    <p><strong>{{ratingLevelsFunc(item.TotalRatingAvg)}}</strong></p>
+    <p class="avg-rating"><strong class="rating-avg-num">{{item.TotalRatingAvg}}</strong>
+      <app-star-rating [rating]="item.TotalRatingAvg" [starCount]="starCount" [color]="starColor"
+        (ratingUpdated)="item.TotalRatingAvg=$event;" [isDisabled]="true"></app-star-rating>
+    </p>
+    <p class="duration"><strong>{{item.Duration| number:'1.0-0'}}</strong></p>
+    <span>'דק</span>
+    <mat-icon class="icon-drive">drive_eta</mat-icon>
+  </div>
+  <div>
+    <div class="card-block"></div>
+  </div>
+  <div class="left_right" routerLink="/footer/{{item.HospitalId}}">
+    <mat-icon class="mat-icon-left">arrow_left</mat-icon>
+    <mat-icon class="mat-icon-left">arrow_left</mat-icon>
+  </div>
+</div>
+<!-- spiner -->
+<div id="mydiv" *ngIf="isSpiner">
+  <img src="../../assets/images/new2.gif" class="ajax-loader" />
+</div>
+
+<!-- Pagination -->
+<div class="w3-center w3-padding-32">
+  <div class="w3-bar">
+    <pagination-controls class="custom-pagination" (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+<a routerLink="/"></a>

@@ -1,0 +1,92 @@
+<div class="div-list-dep">
+  <mat-list>
+    <mat-selection-list [(ngModel)]="selectedHospital" (selectionChange)="selectHospital();" [multiple]="false">
+      <mat-list-option *ngFor="let item of arrHos let i=index" [value]="item.HospitalId" [selected]="item && i == 0"
+        class="option-list">
+        {{item.HospitalName}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-list>
+</div>
+<div class="table-holder">
+  <div class="title-holder">
+    <h1 class="list-title">
+      {{selectedHospitalName}}-מחלקות
+    </h1>
+  </div>
+  <mat-icon class="plus" (click)="addNewDepartment()">add_circle_outline</mat-icon>
+
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="FullName">
+      <th mat-header-cell *matHeaderCellDef> שם </th>
+      <td mat-cell *matCellDef="let element">
+        <input *ngIf="element.ISEDITED" [(ngModel)]="element.FullName">
+        <span *ngIf="!element.ISEDITED">{{element.FullName}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DepartmentManagerName">
+      <th mat-header-cell *matHeaderCellDef> מנהל מחלקה </th>
+      <td mat-cell *matCellDef="let element">
+        <input *ngIf="element.ISEDITED" [(ngModel)]="element.DepartmentManagerName">
+        <span *ngIf="!element.ISEDITED">{{element.DepartmentManagerName}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="IsConfirmed">
+      <th mat-header-cell *matHeaderCellDef>האם אושר</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox *ngIf="element.ISEDITED" [(ngModel)]="element.IsConfirmed"></mat-checkbox>
+        <span *ngIf="!element.ISEDITED">{{element.IsConfirmed? 'כן':'לא'}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="VisitTime">
+      <th mat-header-cell *matHeaderCellDef id="td-visitHours">שעות ביקור</th>
+      <td mat-cell *matCellDef="let element">
+        <input *ngIf="element.ISEDITED" [(ngModel)]="element.VisitTime">
+        <span *ngIf="!element.ISEDITED">{{element.VisitTime}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Tel">
+      <th mat-header-cell *matHeaderCellDef>טלפון</th>
+      <td mat-cell *matCellDef="let element">
+        <input *ngIf="element.ISEDITED" [(ngModel)]="element.Tel">
+        <span *ngIf="!element.ISEDITED">{{element.Tel}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Edit">
+      <th mat-header-cell *matHeaderCellDef> עריכה </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" (click)="element.ISEDITED=!element.ISEDITED">
+          <mat-icon class="mat-18" *ngIf="!element.ISEDITED">edit</mat-icon>
+          <mat-icon class="mat-18" *ngIf="element.ISEDITED" (click)="redirectToUpdate(element.DepartmentId)">done
+          </mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Cancel">
+      <th mat-header-cell *matHeaderCellDef> ביטול </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" (click)="redirectToCancel(element.DepartmentId)">
+          <mat-icon class="mat-18">close</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Delete">
+      <th mat-header-cell *matHeaderCellDef> מחיקה </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" (click)="redirectToDelete(element.DepartmentId)">
+          <mat-icon class="mat-18">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

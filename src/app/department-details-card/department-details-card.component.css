@@ -1,0 +1,143 @@
+.dep-card{
+    width:70vw;
+    position: absolute;
+    right:15vw;
+    top:6vw;
+}
+.div-wrapper-img{
+   position: relative;
+   display: flex;
+   flex-flow: row wrap;
+   min-height: 200px;
+   top:3vw;
+}
+.department-manager img,
+.department-phones img,
+.department-vising-hours img
+{
+    border-radius: 70%;
+    width:4vw;
+    height:3.5vw;
+    position: relative;
+    left: 0.72vw;
+    top: 0.7vw;
+    border: 4px solid white;
+  
+}
+.department-manager,
+.department-phones,
+.department-vising-hours {
+    border-radius: 70%;
+    width: 6vw;
+    height: 5.5vw;
+    background-color: #b73232;
+    background-position:left bottom;
+} 
+.header-content-wrapper{
+  max-width: 120px;
+  direction: rtl;
+  margin-right:48px;
+  margin-left:52px;
+}
+.header-content-wrapper p{
+  font-size: 1.3em;
+  color: #726262;
+  text-shadow:0px 0px 2px white;
+}
+.header-content-wrapper span b{
+  text-shadow:0px 0px 2px rgb(3, 3, 3);
+  color: #b73232;
+}
+mat-card-title,
+  mat-card-subtitle,
+  mat-card-header{
+    direction:rtl;
+  }
+.mat-card-opinion{ 
+    margin: 20px;   
+    box-shadow: 0 0 5px 3px #b73232;
+    text-align: right;
+    margin-left: 6vw;
+    margin-right: 6vw;
+   }
+  #mat-card{
+    text-align: right;
+    font-size: 1em;
+    position: relative;
+    right: 5vw;
+    top: 1vw;
+  }
+  strong{
+    margin-right:5vw;
+  }
+  .comment_more_ratings{
+    margin-right:5.5vw;
+  }
+  .icon-forum{
+      position: absolute;
+      top:0;
+      left:0;
+  }
+  .div-open-wrapping a{
+      margin-right:54vw;
+      margin-bottom:0.4vw ;
+  }
+  .example-header-image {
+    background-image: url(..//../assets/images/userProfil.png);
+    background-size: cover;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    right: 1vw;
+    border: 2px solid #b73232;
+  }
+  .div-title{
+    height: 3vw;
+    padding-left: 19px;
+    padding-right: 5px;
+    border-left: 3px solid white;
+    position: absolute;
+    top: 1vw;
+    text-align: center;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+    right: 0;
+    background: #b73232;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    color: white;
+    box-shadow: 0 0px 4px 0px #b73232;
+  }
+  .div-title p{
+    margin-top:0.8vw;
+    font-size:1em;
+    /* font-family: 'assitant'; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .div-rating-wrapper{
+    margin-top: -4vh; 
+    padding-bottom: 7vh;
+  }
+  .rating12 ,.rating456 ,.rating67{
+    display: inline-block;
+    position: relative;
+   direction: rtl;
+  }
+  .rating12{
+    left: 51vw;
+  }
+  .rating456{
+    top: 2vw;
+    left:12vw;
+  }
+  .rating67{
+    left:-28vw;
+  }
+  mat-paginator {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    background: transparent !important;
+    margin-right: 20vw;
+    margin-top: 14vh;
+  }

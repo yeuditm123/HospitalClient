@@ -1,0 +1,44 @@
+<div id="main_menu">
+  <mat-toolbar>
+    <img src="../../assets/images/לוגו חדש ללא רקע אפור.png">
+    <mat-toolbar-row>
+      <div class="div-header">
+        <button routerLink="/home" mat-icon-button>
+          <mat-icon class="homeIcon">home</mat-icon>
+        </button>
+        <a routerLink="/login" routerLinkActive="active">התחברות</a>
+        <a routerLink="/opinion" routerLinkActive="active"> הוסף חוות דעת </a>
+        <a routerLink="/About"> אודות </a>
+        <a routerLink="/Bar-chart">סטטיסטיקה</a>
+        <button mat-icon-button class="icon-exit" [matMenuTriggerFor]="menu1">
+          <mat-icon>person_outline</mat-icon>
+        </button>
+        <mat-menu #menu1="matMenu">
+          <button mat-menu-item routerLink="/home" (click)="removeUser()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>צא מן המערכת</span>
+          </button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="icon-settings" [disabled]="!isValid"
+          aria-label="Example icon-button with a menu">
+          <mat-icon (click)="isAdmin()">settings</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/updatingOrEditHospital">
+            <mat-icon>location_city</mat-icon>
+            <span>הוספה/עדכון בית חולים</span>
+          </button>
+          <button mat-menu-item routerLink="/updatingOrEditDepartment">
+            <mat-icon>local_hospital</mat-icon>
+            <span>הוספה/עדכון מחלקה</span>
+          </button>
+          <button mat-menu-item routerLink="/ApproveOrDisqualifyOpinion">
+            <mat-icon>edit</mat-icon>
+            <span>פסילת חוות דעת</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<span class="name-admin">{{nameAdmin}}</span>

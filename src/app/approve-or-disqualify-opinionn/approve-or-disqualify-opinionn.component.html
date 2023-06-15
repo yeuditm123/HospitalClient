@@ -1,0 +1,23 @@
+
+<div class="div-wrapper-opinion">  
+<mat-card class="mat-card-opinion" *ngFor="let opinion of opinionArr">
+    <mat-icon class="icon-forum">forum</mat-icon>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title id="mat-card">{{opinion.Departments.FullName}}</mat-card-title>
+    <mat-card-subtitle id="mat-card">המשתמש {{opinion.Users.UserName}} כתב/ה את חוות דעת</mat-card-subtitle>
+    <mat-card-content>
+      <strong>{{opinion.Title}}</strong>
+      <p *ngIf="openId != null && openId==opinion.OpinionId" class="comment_more_ratings">{{opinion.Summary}}</p>
+      <div class="div-open-wrapping"><a href="javascript:void(0)" (click)="openFunc(opinion.OpinionId)"><span>
+            </span>{{text(opinion.OpinionId)}}</a></div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button (click)="DisqualifyOpinion(opinion.OpinionId)">פסול</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-paginator *ngIf="opinionArr && opinionArr.length >0" [length]="length"
+    [pageSize]="pageSize" 
+    (page)="pageEvent = getServerData($event)" >
+</mat-paginator>
+</div>
+

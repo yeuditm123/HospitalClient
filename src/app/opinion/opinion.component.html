@@ -1,0 +1,187 @@
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<div class="opinion-wrapper">
+  <div class="body-content">
+    <mat-card class="card-wrapper-opinion">
+      <mat-card-content>
+        <div *ngIf="prev">
+          <mat-card-title>הוספת חוות דעת</mat-card-title>
+          <div class="div-wrapper">
+            <mat-form-field class="select-filter">
+              <mat-label>בחר בית חולים</mat-label>
+              <mat-select [(ngModel)]="selectedHospital" (selectionChange)="selectHospital();">
+                <mat-option *ngFor="let item of LocalArr" [value]="item.HospitalId">{{item.HospitalName}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="div-wrapper">
+            <mat-form-field class="select-filter">
+              <mat-label>בחר מחלקה</mat-label>
+              <mat-select [(ngModel)]="selectedDepartment" (selectionChange)="selectDepartment();">
+                <mat-option *ngFor="let item of LocalArrDep" [value]="item.DepartmentId">{{item.FullName}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <mat-form-field appearance="fill" class="title-pinion">
+            <mat-label>כותרת חוות הדעת</mat-label>
+            <textarea matInput class="txtarea_title" spellcheck=true [(ngModel)]="newOpinion.Title"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="content-opinion">
+            <mat-label>תוכן חוות הדעת</mat-label>
+            <textarea matInput class="txtarea-content" [(ngModel)]="newOpinion.Summary"></textarea>
+          </mat-form-field>
+        </div>
+        <mat-icon class="{{title}}" (click)="next=!next; prev=!prev; title=prev?'arrow_back':'arrow_forward'">{{title}}
+        </mat-icon>
+        <div class="rating-question" *ngIf="next">
+          <!-- 1 -->
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body-rating">
+                    <h4>באיזו מידה הרגשת במהלך האשפוז שאת/ה מטופל בידיים טובות?</h4>
+                    <app-star-rating class="circle-question" [rating]="newOpinion.Rating1GeneralSatisfaction"
+                      [starCount]="starCount" [color]="starColor"
+                      (ratingUpdated)="newOpinion.Rating1GeneralSatisfaction=$event"></app-star-rating>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body-rating">
+                    <h4>באיזו מידה הרופאים הקשיבו לך והתייחסו לשאלות ולחששות שלך?</h4>
+                    <app-star-rating class="circle-question" [rating]="newOpinion.Rating2ListenAndRelate"
+                      [starCount]="starCount" [color]="starColor"
+                      (ratingUpdated)="newOpinion.Rating2ListenAndRelate=$event"></app-star-rating>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body-rating">
+                    <h4>באיזו מידה הרגשת שקיבלת מענה לבקשות ולצרכים שלך בקלות וללא צורך להתאמץ?</h4>
+                    <app-star-rating class="circle-question" [rating]="newOpinion.Rating3GettingHelpEasily"
+                      [starCount]="starCount" [color]="starColor"
+                      (ratingUpdated)="newOpinion.Rating3GettingHelpEasily=$event"></app-star-rating>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body-rating">
+                    <h4>עד כמה הרגשת ששיתפו אותך באפשרויות הטיפוליות, במידה שבה היית מעוניין? כלומר, שיתפו אותך בהחלטות
+                      והעדפותיך נלקחו בחשבון?</h4>
+                    <app-star-rating class="circle-question" [rating]="newOpinion.Rating4SharingInformation"
+                      [starCount]="starCount" [color]="starColor"
+                      (ratingUpdated)="newOpinion.Rating4SharingInformation=$event"></app-star-rating>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body-rating">
+                    <h4>מרגע הגעתך למחלקה, באיזו מידה תהליך הקבלה למחלקה התנהל ביעילות?</h4>
+                    <app-star-rating class="circle-question" [rating]="newOpinion.Rating5AnEfficientProcess"
+                      [starCount]="starCount" [color]="starColor" [isDisabled]="false"
+                      (ratingUpdated)="newOpinion.Rating5AnEfficientProcess=$event;"></app-star-rating>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body-rating">
+                    <h4>באיזו מידה את/ה מרוצה מהתנאים בחדר בו אושפזת (מיזוג אוויר, מיטה, מזרון...)?</h4>
+                    <app-star-rating class="circle-question" [rating]="newOpinion.Rating6ConditionsOfHospitalization"
+                      [starCount]="starCount" [color]="starColor"
+                      (ratingUpdated)="newOpinion.Rating6ConditionsOfHospitalization=$event"></app-star-rating>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 7 -->
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body-rating">
+                    <h4>באיזו מידה הרגשת שהצוות המטפל פועל לשמירה על בטיחותך למניעת טעויות רפואיות במקרים כגון זיהוי
+                      חולה, רגישות לתרופות, מניעת נפילות וכדו'?</h4>
+                    <app-star-rating class="circle-question" [rating]="newOpinion.Rating7PreventionOfMedicalErrors"
+                      [starCount]="starCount" [color]="starColor"
+                      (ratingUpdated)="newOpinion.Rating7PreventionOfMedicalErrors=$event"></app-star-rating>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <mat-card-footer>
+            <section>
+              <mat-checkbox class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+            </section>
+            אני מאשר שחוות דעת זו מבוססת על ההתנסות האישית שלי ושזוהי דעתי על מחלקה זו, שאין לי קשרים אישיים או עסקיים
+            עם המקום ושלא הוצעו לי תמריץ או תשלום מצד המקום כדי לכתוב חוות דעת זו.
+          </mat-card-footer>
+          <mat-card-actions>
+            <button [disabled]="!checked" class="send-opinion" mat-flat-button (click)="sendOpinion();">שלח חוות
+              דעת</button>
+          </mat-card-actions>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

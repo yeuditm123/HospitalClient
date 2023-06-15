@@ -1,0 +1,244 @@
+.card-block {
+  font-size: 1em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+div p {
+  text-align: center;
+  font-size: 1.08em;
+  line-height: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  color: #645252;
+  margin: 0px;
+  /* font-family:'my_font'; */
+  /* font-family: inherit; */
+}
+.card {
+  position: relative;
+  font-size: 1em;
+  overflow: hidden;
+  margin: 3%;
+  left: 0;
+  width: 19%;
+  height: 17vw;
+  border: none;
+  border-radius: 0.28571429rem;
+  box-shadow: 0 1px 3px 0 #b73232, 0 0 0 1px;
+  margin-top: 13.5vw;
+  display: inline-block;
+  transition: all 0.1s ease-in;
+  /* z-index:1111; */
+}
+.card:hover {
+  top: -2px;
+  box-shadow: 1px 1px 1px 1px #645252;
+  /* box-shadow: 0 1px 3px 0  #645252, 0 0 0 1px; */
+}
+.div-header-wrapper {
+  z-index: 1111;
+  position: relative;
+  padding-top: 20px;
+}
+.left_right {
+  position: relative;
+  top: 0vw;
+  display: inline-block;
+  z-index: 1;
+}
+.right {
+  position: relative;
+  left: -1vw;
+}
+.mat-icon-left {
+  margin-right: -15px;
+  outline: none !important;
+  font-size: 35px;
+}
+.mat-icon-left:focus,
+.mat-icon-left:hover,
+.left_right {
+  outline: none !important;
+  cursor: pointer;
+}
+.avg-rating {
+  position: relative;
+  top: -0.8vw;
+  direction: rtl;
+}
+.rating-avg-num {
+  font-size: 1.9em;
+  /* text-shadow: 1px 1.5px #b73232 */
+}
+.w3-padding-32 {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+  margin-top: -1vw;
+}
+.w3-center {
+  text-align: center !important;
+}
+.w3-center .w3-bar {
+  display: inline-block;
+  width: auto;
+}
+.w3-bar .w3-button {
+  white-space: normal;
+}
+.w3-bar .w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+  text-decoration: none;
+  color: black;
+}
+.custom-pagination /deep/ .ngx-pagination .current {
+  background: #b73232;
+  font-size: 1.3em;
+}
+.duration {
+  position: relative;
+  top: 0.75vw;
+  right: -7.5vw;
+}
+.duration strong {
+  font-weight: 800;
+  font-size: 1.3em;
+}
+.div-header-wrapper span {
+  position: absolute;
+  right: 1.5vw;
+  font-size: 0.75em;
+}
+.icon-drive {
+  position: absolute;
+  right: 1.9vw;
+  font-size: 1vw;
+}
+.div-filter {
+  position: absolute;
+  top: 8vw;
+  left: 70vw;
+}
+.btn-filter {
+  position: absolute;
+  left: -8vw;
+  top: -0.5vw;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #ffffff;
+  border: 2px solid #d9d9d9;
+  box-shadow: 0px 0px 2px 2px #b73232;
+  font-size: 1.2em;
+  background: #726262;
+}
+.search {
+  position: absolute;
+  z-index: 11111;
+  top: 3.5vh;
+  left: 20vw;
+}
+.icon-search {
+  font-size: 25px;
+  position: relative;
+  left: 2px;
+  top: 2px;
+  cursor: pointer;
+  z-index: 22222;
+  color: white;
+}
+.search input:focus {
+  outline: none !important;
+  width: 23vw;
+  background-color: #d3c1c1;
+}
+.search input::placeholder {
+  color: #493f3f;
+  font-weight: bold;
+  font-size: 1.09em;
+}
+.search input {
+  position: fixed;
+  z-index: 11111;
+  width: 18vw;
+  height: 4.2vh;
+  top: 3.8vh;
+  border-radius: 39px;
+  background: #b73232;
+  box-shadow: 0px 0px 3px 1px black;
+  text-align: right;
+  color: white;
+  font-size: 1em;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.2, 0.85, 0.2, 1.1);
+}
+.mat-flat-button {
+  min-width: 50px;
+  line-height: 26px;
+}
+#block {
+  width: 100vw;
+  height: 120vh;
+  position: fixed;
+  background-color: #fafafa87;
+  z-index: 11111;
+  top: -20vh;
+  left: 0;
+}
+.big-round {
+  position: fixed;
+  background-color: #b73232;
+  width: 65px;
+  height: 65px;
+  top: 15vh;
+  right: 3vw;
+  border-radius: 70%;
+  cursor: pointer;
+}
+.small-round {
+  position: relative;
+  top: 3px;
+  left: 2.5px;
+  width: 53px;
+  height: 53px;
+  border: 3px solid white;
+  border-radius: 70%;
+  cursor: pointer;
+}
+.filter-txt {
+  color: white !important;
+  font-size: small !important;
+  margin-top: 1vh !important;
+}
+.icon-filter {
+  color: white;
+  margin-left: 13px;
+  cursor: pointer;
+}
+.icon-settings {
+  top: 6vw;
+  position: absolute;
+  z-index: 11111;
+  left: 1vw;
+  font-size: 4vw;
+  cursor: pointer;
+}
+.icon-settings mat-icon {
+  font-size: 2vw;
+  margin-top: -0.5vw;
+  margin-left: -0.2vw;
+  display: none;
+}

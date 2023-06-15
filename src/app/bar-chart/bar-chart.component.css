@@ -1,0 +1,23 @@
+canvas{
+    margin-right: 10vw;
+    display: block;
+    width: 475px;
+    height: 237px;
+    margin-left: 10vw;
+    margin-top: 10vw;
+}
+  mat-list {
+    position: absolute;
+    right:0vw;
+    direction: rtl;
+    padding-right: 10px;
+  }
+  mat-list-option[aria-selected="true"] {
+    background:#b73232;
+    color:white
+  }
+  .option-list{
+    color: #847675;
+    font-size:17px;
+    font-weight:lighter;
+  }

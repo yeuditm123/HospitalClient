@@ -1,0 +1,257 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/sweetalert2/dist/sweetalert2.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: purple;
+}
+
+/* #style-14::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
+    background-color: #CCCCCC;
+}
+
+#style-14::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+#style-14::-webkit-scrollbar-thumb
+{
+    background-color: #FFF;
+    background-image: -webkit-linear-gradient(90deg,
+  rgb(179, 169, 169) 0%,
+  rgba(0, 0, 0, 1) 25%,
+  transparent 100%,
+ rgba(0, 0, 0, 1) 75%,
+transparent)
+} */
+.bg {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./assets/images/3113529.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  overflow-y: scroll;
+  width: 100%;
+  /* opacity:0.8; */
+}
+.body-content {
+  padding: 40px 20px;
+  position: absolute;
+  width: 73%;
+  right: 11%;
+  top: 10%;
+  /* background: rgba(255, 255, 255, 0.6); */
+  height: 90%;
+  text-align: right;
+  direction: rtl;
+  color: #000000;
+}
+@font-face {
+  font-family: "my_font";
+  src: url("./assets/fonts/PETEB___.TTF") format("opentype");
+}
+.carousel-cell {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 130%;
+  height: 23%;
+  max-height: 200px;
+  top: 7vw;
+  right: 5vw;
+  position: absolute;
+  opacity: 0;
+  border: 1px solid white;
+  box-shadow: 0px 0px 3px 2px #b73232;
+  transition: 0s all ease;
+  -webkit-transition: 0s all ease;
+}
+.carousel-cell.active {
+  opacity: 1;
+  transition: 0.7s all ease;
+  -webkit-transition: 0.7s all ease;
+}
+.custom-carusel {
+  width: 240px;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+.carousel-cell-wrapper {
+  width: 240px;
+  position: absolute;
+  top: 19vw;
+  right: 7.5vw;
+  text-align: center;
+}
+.cir-carousel {
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.7s all ease;
+  -webkit-transition: 0.7s all ease;
+  width: 10px;
+  z-index: 11111;
+  height: 10px;
+  margin: 0 5px;
+  display: inline-block;
+}
+.cir-carousel.active {
+  background-color: #b73232;
+}
+.arrow-left {
+  position: absolute;
+  top: 13vw;
+  font-size: 3.8vw;
+  z-index: 3;
+  left: -11vw;
+  cursor: pointer;
+}
+.arrow-right {
+  position: absolute;
+  top: 13vw;
+  font-size: 3.8vw;
+  z-index: 3;
+  right: 6.5vw;
+  cursor: pointer;
+}
+.table-details {
+  position: relative;
+  left: 23vw;
+  top: 5vw;
+  font-size: 1.3em;
+  color: #726262;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.mat-tab-group.mat-tab-group.tabs.mat-primary {
+  position: relative;
+  top: -3vw;
+}
+.tab-group {
+  max-width: 70vw;
+}
+/* ::ng-deep.mat-tab-group-ripple  {
+  background-color: brown !important;
+} */
+.mat-mini-fab.mat-customed {
+  background-color: brown !important;
+}
+.icon-passwd {
+  position: absolute;
+  left: 0vw;
+  top: -1vw;
+}
+.icon-Username {
+  position: absolute;
+  left: 0vw;
+  top: 0.1vw;
+}
+.icon-mail {
+  position: absolute;
+  left: 0vw;
+  top: 0vw;
+}
+mat-icon,
+.mat-icon {
+  color: #b73232;
+}
+.opinion-wrapper .circle {
+  width: 18px !important;
+  height: 18px !important;
+}
+.opinion-wrapper .circle:after {
+  width: 100% !important;
+  height: 100% !important;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #b73232;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #b73232;
+  border: 0.7px solid #b73232;
+}
+.mat-radio-outer-circle {
+  border: 1px solid white;
+  box-shadow: 0px 0px 3px 1px black;
+}
+mat-card-footer img {
+  position: relative;
+  top: 0vw;
+  left: -13vw;
+  width: 80px;
+}
+.mat-form-field-infix {
+  padding: 0.4375em 0;
+  text-align: right;
+}
+#mydiv {
+  position: absolute;
+  top: 5.2vw;
+  left: 0;
+  width: 100%;
+  height: 89%;
+  z-index: 1000;
+  background-color: #fafafa;
+  opacity: 0.5;
+}
+.ajax-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -32px; /* -1 * image width / 2 */
+  margin-top: -32px; /* -1 * image height / 2 */
+  display: block;
+}
+.icon-settings:before {
+  content: "" !important;
+}
+
+.mat-checkbox-ripple .mat-ripple-element,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #b73232 !important;
+}
+.mat-paginator-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 56px;
+  padding: 0 8px;
+  flex-wrap: wrap-reverse;
+  margin: auto !important;
+  color: black;
+  font-size: large;
+  text-align: center;
+  text-shadow: 0 0 1px rgb(0 0 0);
+}
+.mat-paginator-icon {
+  width: 28px;
+  fill: currentColor;
+  color: black !important;
+}
+/* @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
+} */

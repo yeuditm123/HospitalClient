@@ -1,0 +1,30 @@
+<div class="body-content">
+  <mat-card class="card_sign">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link label="Log In" routerLink="/login" routerLinkActive="active">התחבר </a>
+      <a mat-tab-link label="Sign Up" routerLink="/SignUp" routerLinkActive="active" [active]="true">הרשם </a>
+    </nav>
+    <mat-card-content class="SignContent">
+      <form [formGroup]="SignForm" (ngSubmit)="signform()">
+        <h2>הרשם</h2>
+        <mat-form-field class="full-width-input">
+          <mat-icon class="icon-Username">account_circle</mat-icon>
+          <input matInput placeholder="שם משתמש" formControlName="Signusername" required>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <mat-icon class="icon-mail"> mail_outline</mat-icon>
+          <input matInput placeholder="מייל" formControlName="Signemail" required>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <mat-icon class="icon-passwd" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+          <input matInput placeholder="סיסמא" formControlName="SignPasswd" [type]="hide ? 'password' :'text'" required>
+        </mat-form-field>
+        <button mat-flat-button class="sign_submit" type="submit">הרשם</button>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <img src="../../assets/images/לוגו חדש ללא רקע אפור.png">
+    </mat-card-footer>
+  </mat-card>
+</div>

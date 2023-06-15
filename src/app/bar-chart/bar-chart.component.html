@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div>
+  <mat-list>
+    <mat-selection-list [(ngModel)]="selectedTypeQuestion" (selectionChange)="selectQuestion();" [multiple]="false">
+      <mat-list-option [selected]="1" class="option-list" [value]="1">שביעות רצון כללית</mat-list-option>
+      <mat-list-option class="option-list" [value]="2">יחס וכבוד למטופל</mat-list-option>
+      <mat-list-option class="option-list" [value]="3">מתן מידע ובהירות הסברים</mat-list-option>
+      <mat-list-option class="option-list" [value]="4">העצמת המטופל</mat-list-option>
+      <mat-list-option class="option-list" [value]="5">יעילות</mat-list-option>
+      <mat-list-option class="option-list" [value]="6">תנאי אשפוז</mat-list-option>
+      <mat-list-option class="option-list" [value]="7">בטיחות המטופל</mat-list-option>
+    </mat-selection-list>
+  </mat-list>
+</div>
+<div class="chart-wrapper" *ngIf="play" style="width: 50%;margin: auto;margin-top: 38pt;margin-right:37%;">
+  <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+    [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+  </canvas>
+</div>

@@ -1,0 +1,26 @@
+<div class="body-content">
+  <mat-card class="card_login">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link label="Log In" routerLink="/login" routerLinkActive="active" [active]="true">התחבר </a>
+      <a mat-tab-link label="Sign Up" routerLink="/signUp" routerLinkActive="active"> הרשם </a>
+    </nav>
+    <mat-card-content class="LoginContent">
+      <form [formGroup]="LoginForm">
+        <h2>התחבר</h2>
+        <mat-form-field class="full-width-input">
+          <mat-icon class="icon-mail"> mail_outline</mat-icon>
+          <input matInput placeholder="מייל" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <mat-icon class="icon-passwd" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+          <input matInput placeholder="סיסמא" formControlName="password" [type]="hide ? 'password' :'text'" required>
+        </mat-form-field>
+        <button (click)="submitForm()" mat-flat-button type="submit" class="login_submit">התחבר</button>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <img src="../../assets/images/לוגו חדש ללא רקע אפור.png">
+    </mat-card-footer>
+  </mat-card>
+</div>
